@@ -24,10 +24,10 @@ print("Your string has", l.count(" "), "spaces")
 print("Your string has", l.count("."), "dots")
 #4
 r = "Homework"
-r = r.ljust(50, " ")
-print("String length is", len(r), ". Quantity of spaces is", r.count(" "),"String is")
-print(r)
-r = r.rjust(100, " ")
+r = r.center(100)
+#print("String length is", len(r), ". Quantity of spaces is", r.count(" "),"String is")
+#print(r)
+#r = r.rjust(100, " ")
 print("String length is", len(r), "Quantity of spaces is", r.count(" "),"String is")
 print(r)
 #5

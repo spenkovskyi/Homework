@@ -16,11 +16,12 @@ print("Quantity of dozens in", c, "is", c//10)
 d = 999
 print("Amount of digits in", d, "is", d//100+((d-(d//100)*100)//10)+((d-(d//100)*100)%10))
 #4
-n = 56
-if n % 2 == 1:
-    print("Next paired number of", n, "is", n+1)
-else:
-    print("Next paired number of", n, "is", n+2)
+n = 57
+print("Next paired number of", n, "is", (round((n/2+0.6))*2))
+#if n % 2 == 1:
+#    print("Next paired number of", n, "is", n+1)
+#else:
+#    print("Next paired number of", n, "is", n+2)
 #5
 x = 441.912345678
 print("Fractional part of", x,"is", round((x-x//1), len(str(x))))# Need to clarify how to round
