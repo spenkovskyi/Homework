@@ -33,6 +33,6 @@ print(f(a=1, job='lazy',name="Bob"))
 print(f())
 
 """
-import new_package.my_mod
-f = new_package.my_mod.func1(1)
+import new_package.my_mod as e
+f = e.func1(1)
 print(f)

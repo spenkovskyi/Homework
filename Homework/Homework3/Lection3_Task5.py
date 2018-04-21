@@ -12,11 +12,11 @@ But at least we are not what we used to be
 (Подсказка: создавать словарь, где ключи — это слова из текста, а в значениях подсчитываем количество «встречаний» этого слова)
 """
 
-s = "You cannot help people permanently by doing for them, what they could and should do for themselves. (Abraham Lincoln)"
+s = "You cannot help people permanently by doing for them,\nwhat they could and should do for themselves. \n\t(Abraham Lincoln)"
 
 print(s)
-l = s.split(" ")
-#print(l)
+l = s.split()
+print(l)
 print(len(l))
 l1=list()
 for i in range(len(l)):
