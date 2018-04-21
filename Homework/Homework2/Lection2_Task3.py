@@ -14,13 +14,7 @@ except ValueError:
 else:
 #print(type(y) == int)
     #print((y % 4) == 0, (y % 100) == 0, (y % 400) == 0)
-    if (y % 4) == 0:
-        if (y % 100) == 0:
-            if (y % 400) == 0:
-                print(y,"is a leap year")
-            else:
-                print(y,"is not a leap year")
-        else:
-            print(y,"is a leap year")
+    if ((y % 400) == 0) or ((y % 4) == 0 and (y % 100) != 0):
+        print(y,"is a leap year")
     else:
         print(y,"is not a leap year")

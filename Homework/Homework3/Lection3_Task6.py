@@ -9,24 +9,24 @@ def is_year_leap(year):
     Function will return True if the year is leap and False otherwise
     """
 #    print("Method was called")
-    if ((year % 4) == 0 and (y % 400) == 0) or ((y % 4) == 0 and (y % 100) != 0):
-        result = True
+    if ((year % 400) == 0) or ((year % 4) == 0 and (year % 100) != 0):
+        return True
     else:
-        result = False
+        return False
 #    print("Method execution finished. Result is", result)
-    return result
-def treangle_existance(a):
+
+def treangle_existance(a,b,c):
     """
     Function will return True if triangle exist and False otherwise
     """
 #    print("Method was called")
-    a = sorted(a)
-    if a[0] + a[1] > a[2]:
-        result = True
+    x = sorted([a,b,c])
+    if x[0] + x[1] > x[2]:
+        return True
     else:
-        result = False
+        return False
 #    print("Method execution finished. Result is", result)
-    return result
+
 #1
 y = input("Enter your year \n")
 try:
@@ -39,12 +39,12 @@ else:
     else:
         print(y,"is not a leap year")
 #2
-a = list()
-a.append(float(input("Enter a \n")))
-a.append(float(input("Enter b \n")))
-a.append(float(input("Enter c \n")))
-print(a)
-if treangle_existance(a):
+
+a = float(input("Enter a \n"))
+b = float(input("Enter b \n"))
+c = float(input("Enter c \n"))
+print(a,b,c)
+if treangle_existance(a,b,c):
     print("triangle exist")
 else:
     print("triangle does not exist")

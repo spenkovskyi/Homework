@@ -9,21 +9,21 @@
 #1
 l=[1,2,3,4,5,6,7,8]
 
-while (len(l)) > 0:
+while l:
     print(l)
     print(l.pop(0))
 print("List is empty now", l)
 #2
 s="String that should be delelted"
-while (len(s)) > 0:
-    print(s[0:1])
-    s=s[1:len(s)]
+while s:
+    print(s[0])
+    s=s[1:]
     #print(s)
 print("String is empty now", s)
 #3
 k=[5887,99,5,5,6,5,2,4,5884,45678,5478]
-k=sorted(k)
+k.sort()
 print(k)
-while (len(k)) > 0:
+while k:
     print(k.pop(0))
 print("List is empty now", k)

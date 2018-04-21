@@ -12,24 +12,23 @@ But at least we are not what we used to be
 (Подсказка: создавать словарь, где ключи — это слова из текста, а в значениях подсчитываем количество «встречаний» этого слова)
 """
 
+<<<<<<< HEAD
 s = "You cannot help people permanently by doing for them,\nwhat they could and should do for themselves. \n\t(Abraham Lincoln)"
+=======
+s = "You cannot help people permanently by doing for them, \nwhat they could and should do for themselves. \n\t\t\t\t\t\t\t(Abraham Lincoln)"
+>>>>>>> refs/remotes/origin/master
 
 print(s)
 l = s.split()
 print(l)
 print(len(l))
-l1=list()
+#l1=list()
 for i in range(len(l)):
-    l[i] = l[i].strip(",")
-    l[i] = l[i].strip(".")
-    l[i] = l[i].strip("(")
-    l[i] = l[i].strip(")")
-    l1.append(l[i])
-print(l1)
-l1=sorted(l1)
-print(l1)
-"""
-for i in range(len(l1)):
-    d = {s.find(l1[i]):l[i]}
-    print(d)
-"""
+    l[i] = l[i].strip(".,()")
+print(l)
+l.sort()
+print(l)
+d=dict()
+for i in range(len(l)):
+    d.update({l[i] : l.count(l[i])})
+print(d)

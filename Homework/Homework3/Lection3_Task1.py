@@ -16,11 +16,11 @@
 •	В десятой строке выведите длину данной строки.
 """
 
-
+s = input("Please enter string (more than 3 symbols) \n")
 try:
-    s = input("Enter string \n")
-except EOFError:
+    s[3]
+except IndexError:
     print("String is too small")
 #s ="Hi there! Are you ok?"
 #print(s)
-print(s[2:3], s[-2:-1], s[:5], s[:-2], s[::2], s[1::2], s[len(s)::-1], s[(len(s)-2):0:-1], len(s), sep='\n')
+print(s[2], s[-2], s[:5], s[:-2], s[::2], s[1::2], s[len(s)::-1], s[-2:0:-1], len(s), sep='\n')

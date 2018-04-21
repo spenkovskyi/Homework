@@ -7,13 +7,13 @@ Isosceles triangle (равнобедренный),
 Versatile triangle (разносторонний) или не треугольник (Not a triangle).
 """
 
-def treangle_type(a):
+def treangle_type(b,c,d):
     """
-    Function will return type of triangle
-    (Equilateral triangle,  Isosceles triangle, Versatile triangle) if it exist and "Triangle does not exist" otherwise
+    Function will return string with triangle type (equilateral, isosceles, versatile)
+    if it exist and False if it is not exist
     """
-    #    print("Method was called")
-    a = sorted(a)
+
+    a = sorted([b,c,d])
     if a[0] + a[1] > a[2]:
         if a[0] == a[1] == a[2]:
             triangle = "equilateral"
@@ -26,16 +26,16 @@ def treangle_type(a):
 #    print("Method execution finished. Result is", result)
     return triangle
 #1
-a = list()
+#a = list()
 try:
-    a.append(float(input("Enter a \n")))
-    a.append(float(input("Enter b \n")))
-    a.append(float(input("Enter c \n")))
+    a = float(input("Enter a \n"))
+    b = float(input("Enter b \n"))
+    c = float(input("Enter c \n"))
 except ValueError:
     print("Input must be digital")
 else:
-    print(a)
-    t = treangle_type(a)
+    print(a,b,c)
+    t = treangle_type(a,b,c)
     if t:
         print("triangle exist and it is", t)
     else:
