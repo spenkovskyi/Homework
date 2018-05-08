@@ -21,12 +21,12 @@
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
-  l=list(words)
-#  print(l)
+#  l=list(words)
+#  print(words, type(words))
   c=0
-  for i in range (len(l)):
+  for word in words:
 #    print(l[i], len(l[i]), l[i][0], l[i][-1])
-    if len(l[i]) >= 2 and l[i][0] == l[i][-1]:
+    if len(word) >= 2 and word[0] == word[-1]:
 #      print(c)
       c+=1
   return c
@@ -40,17 +40,15 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-  l=list(words)
-#  print(l)
+  # l=list(words)
+  # print(words)
   x=list()
   z=list()
-  while l:
-    if l[0][0] == "x" :
-      x.append(l[0])
-      l.pop(0)
+  for word in words:
+    if word[0] == "x" :
+      x.append(word)
     else:
-      z.append(l[0])
-      l.pop(0)
+      z.append(word)
     x.sort()
     z.sort()
   return (x+z)
@@ -77,7 +75,7 @@ def test(got, expected):
     prefix = ' OK '
   else:
     prefix = '  X '
-  print(prefix, ' got:', repr(got),' expected: ', repr(expected))
+  print('{0} got: {1} expected: {2}'.format(prefix, got, expected))
 
 
 # Calls the above functions with interesting inputs.

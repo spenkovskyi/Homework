@@ -24,7 +24,7 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-  s=str()
+  # s=str()
   if count < 10:
     s = "Number of donuts: " + str(count)
   else:
@@ -55,8 +55,8 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
-  while (s.count(s[0]) > 1):
-    s=s[0]+s[1:].replace(s[0], "*")
+  # while (s.count(s[0]) > 1):
+  s=s[0]+s[1:].replace(s[0], "*")
   return s
 
 # D. MixUp
@@ -78,7 +78,7 @@ def test(got, expected):
     prefix = ' OK '
   else:
     prefix = '  X '
-  print(prefix, ' got:', repr(got),' expected: ', repr(expected))
+  print('{0} got: {1} expected: {2}'.format(prefix, got, expected))
 
 
 # Provided main() calls the above functions with interesting inputs,

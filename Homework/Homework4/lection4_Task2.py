@@ -4,16 +4,8 @@
 """
 
 def second_value(*args):
-#    print(args)
-    l=list(args)
-    l.sort()
-    d=dict()
-    for i in range(len(l)):
-        d.update({l[i] : l.count(l[i])})
-#        print(d)
-    l=list(d.keys())
-#    print("keys in dict", l)
-#    print(type(l))
+    # print(args)
+    l=sorted(list(set(args)))
     return l[1]
 
 

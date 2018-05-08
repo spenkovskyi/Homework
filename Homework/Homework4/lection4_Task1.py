@@ -13,9 +13,9 @@ def song_generation(rows=3, la=3, end_of_song = 0):
     song = "la-"*la
     song = song.strip("-")
     if end_of_song:
-        song = (song + "!" + "\n")*rows
+        song = (song + "\n")*(rows-1) + (song + "!" + "\n")
     else:
-        song = (song + "." + "\n")*rows
+        song = (song + "\n")*(rows-1) + (song + "." + "\n")
 #    print(song)
     return song
 
