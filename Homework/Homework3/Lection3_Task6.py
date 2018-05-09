@@ -26,25 +26,25 @@ def treangle_existance(a,b,c):
     else:
         return False
 #    print("Method execution finished. Result is", result)
-
-#1
-y = input("Enter your year \n")
-try:
-    y = int(y)
-except ValueError:
-    print("Year must be integer")
-else:
-    if is_year_leap(y):
-        print(y,"is a leap year")
+if __name__ == "__main__":
+    #1
+    y = input("Enter your year \n")
+    try:
+        y = int(y)
+    except ValueError:
+        print("Year must be integer")
     else:
-        print(y,"is not a leap year")
-#2
+        if is_year_leap(y):
+            print(y,"is a leap year")
+        else:
+            print(y,"is not a leap year")
+    #2
 
-a = float(input("Enter a \n"))
-b = float(input("Enter b \n"))
-c = float(input("Enter c \n"))
-print(a,b,c)
-if treangle_existance(a,b,c):
-    print("triangle exist")
-else:
-    print("triangle does not exist")
+    a = float(input("Enter a \n"))
+    b = float(input("Enter b \n"))
+    c = float(input("Enter c \n"))
+    print(a,b,c)
+    if treangle_existance(a,b,c):
+        print("triangle exist")
+    else:
+        print("triangle does not exist")

@@ -26,17 +26,17 @@ def treangle_type(b,c,d):
 #    print("Method execution finished. Result is", result)
     return triangle
 #1
-#a = list()
-try:
-    a = float(input("Enter a \n"))
-    b = float(input("Enter b \n"))
-    c = float(input("Enter c \n"))
-except ValueError:
-    print("Input must be digital")
-else:
-    print(a,b,c)
-    t = treangle_type(a,b,c)
-    if t:
-        print("triangle exist and it is", t)
+if __name__ == "__main__":
+    try:
+        a = float(input("Enter a \n"))
+        b = float(input("Enter b \n"))
+        c = float(input("Enter c \n"))
+    except ValueError:
+        print("Input must be digital")
     else:
-        print("triangle does not exist")
+        print(a,b,c)
+        t = treangle_type(a,b,c)
+        if t:
+            print("triangle exist and it is", t)
+        else:
+            print("triangle does not exist")
