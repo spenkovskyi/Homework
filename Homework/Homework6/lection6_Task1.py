@@ -14,11 +14,11 @@
 """
 
 import requests
-class personage:
-    def __init__(self, pers_attr):
-        self.attr = pers_attr
+class Object:
+    def __init__(self, object_attr):
+        self.attr = object_attr
 
-    def create_pers(self, base_url):
+    def create_object(self, base_url):
         self.resp = requests.post(base_url, data=self.attr)
         self.resp = self.resp.json()
         return self.resp
@@ -30,19 +30,19 @@ class personage:
         else:
             return False
 
-    def pers_really_exist(self, base_url):
+    def obj_really_exist(self, base_url):
         if self.resp in requests.get(base_url).json():
             return True
         else:
             return False
 
-    def upd_pers(self, base_url, updated_pers_attr):
+    def upd_obj(self, base_url, updated_pers_attr):
         self.attr = updated_pers_attr
         self.resp = requests.put(base_url + str(self.resp['id']),data=self.attr)
         self.resp = self.resp.json()
         return self.resp
 
-    def delete_pers(self, base_url):
+    def delete_obj(self, base_url):
         resp_delete = requests.delete(base_url + str(self.resp['id']))
         if resp_delete.status_code == 204:
             return True
@@ -54,23 +54,23 @@ if __name__ == "__main__":
     # Create Book
     base_url_books = "http://pulse-rest-testing.herokuapp.com/books/"
     book_dict = {"title": "Vasisualy Pupipkov journey", "author": "Vasisualy Pupipkov"}
-    book = personage(book_dict)
-    book.create_pers(base_url_books)
+    book = Object(book_dict)
+    book.create_object(base_url_books)
     if book.exist_in_roles(base_url_books):
         print("Success. Book exist")
     else:
         print("Fail. Book does not exist")
-    if book.pers_really_exist(base_url_books):
+    if book.obj_really_exist(base_url_books):
         print("Book really exist")
     else:
         print("Book doesn't exist")
     upd_book_dict = {"title": "Vaselina Pup4ikova around the world", "author": "Vaselina Pup4ikova"}
-    book.upd_pers(base_url_books,upd_book_dict)
+    book.upd_obj(base_url_books, upd_book_dict)
     if book.exist_in_roles(base_url_books):
         print("Success. Updated book exist")
     else:
         print("Fail. Upgated book does not exist")
-    if book.pers_really_exist(base_url_books):
+    if book.obj_really_exist(base_url_books):
         print("Book really updated")
     else:
         print("Book doesn't updated")
@@ -79,7 +79,7 @@ if __name__ == "__main__":
         print("Success. Book exist")
     else:
         print("Fail. Book does not exist")
-    if book.pers_really_exist(base_url_books):
+    if book.obj_really_exist(base_url_books):
         print("Book really exist")
     else:
         print("Book doesn't exist")
@@ -87,44 +87,44 @@ if __name__ == "__main__":
     # Create Role
     base_url_roles = "http://pulse-rest-testing.herokuapp.com/roles/"
     pers_dict = {"name": "Vasisualy Pupipkov", "type": "an hero", "level": 12, "book": int(book.resp["id"])}
-    role = personage(pers_dict)
+    role = Object(pers_dict)
     # role.create_pers(base_url_roles)
-    print(role.create_pers(base_url_roles))
+    print(role.create_object(base_url_roles))
     if role.exist_in_roles(base_url_roles):
         print("Success. ID exist")
     else:
         print("Fail. ID does not exist")
-    if role.pers_really_exist(base_url_roles):
+    if role.obj_really_exist(base_url_roles):
         print("Personage really exist")
     else:
         print("Personage doesn't exist")
     upd_pers_dict = {"name": "Vaska Pupkov", "type": "an real hero", "level": 14, "book": int(book.resp["id"])}
-    role.upd_pers(base_url_roles,upd_pers_dict)
+    role.upd_obj(base_url_roles, upd_pers_dict)
     if role.exist_in_roles(base_url_roles):
         print("Success. Updated ID exist")
     else:
         print("Fail. Upgated ID does not exist")
-    if role.pers_really_exist(base_url_roles):
+    if role.obj_really_exist(base_url_roles):
         print("Personage really updated")
     else:
         print("Personage doesn't updated")
     # Delete Role
-    if role.delete_pers(base_url_roles): print("Role deleted")
+    if role.delete_obj(base_url_roles): print("Role deleted")
     if role.exist_in_roles(base_url_roles):
         print("Success. ID exist")
     else:
         print("Fail. ID does not exist")
-    if role.pers_really_exist(base_url_roles):
+    if role.obj_really_exist(base_url_roles):
         print("Personage really exist")
     else:
         print("Personage doesn't exist")
     # Delete Book
-    if book.delete_pers(base_url_books): print("Book deleted")
+    if book.delete_obj(base_url_books): print("Book deleted")
     if book.exist_in_roles(base_url_books):
         print("Success. Book exist")
     else:
         print("Fail. Book does not exist")
-    if book.pers_really_exist(base_url_books):
+    if book.obj_really_exist(base_url_books):
         print("Book really exist")
     else:
         print("Book doesn't exist")
