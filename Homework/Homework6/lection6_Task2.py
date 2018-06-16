@@ -28,8 +28,6 @@ if __name__ == "__main__":
         f = open("temp.txt", "w")
         f.write(song_generation(rows=5, la=10, end_of_song=1))
         print("File temp.txt was updated")
-    except:
-        pass
     finally:
         f.close()
     f = open("temp.txt", "r")
